@@ -1,0 +1,72 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-dark: #002B24;
+  --color-brand-sidebar: #003D2E;
+  --color-brand-card: #004D40;
+  --color-brand-accent: #FFB800;
+  --color-brand-text-muted: #8E9E9B;
+  
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+}
+
+@layer base {
+  html, body, #root {
+    @apply h-full w-full;
+  }
+  body {
+    @apply bg-brand-dark text-white font-sans overflow-hidden;
+  }
+}
+
+/* Custom Scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #FFB800 #001F1A;
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #001F1A;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #FFB800;
+  border-radius: 10px;
+  border: 3px solid #001F1A;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #FFD700;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+/* Markdown Content Styling */
+.markdown-content table {
+  @apply w-full border-collapse mb-6 text-sm;
+}
+
+.markdown-content th {
+  @apply bg-brand-accent/20 text-brand-accent font-bold p-3 border border-white/10 text-left;
+}
+
+.markdown-content td {
+  @apply p-3 border border-white/10 text-white/80;
+}
+
+.markdown-content tr:nth-child(even) {
+  @apply bg-white/5;
+}
+
+.markdown-content h3 {
+  @apply text-lg font-bold text-brand-accent mb-4 mt-8 uppercase tracking-tight;
+}
+
+.markdown-content p {
+  @apply text-sm text-white/70 leading-relaxed mb-4;
+}
